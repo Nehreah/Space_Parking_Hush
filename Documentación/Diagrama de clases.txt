@@ -1,0 +1,145 @@
+@startuml
+
+class Controller{
+
+-nivel: int
+-vista: View&
+-model: Model&
+
++Controller(Model& auxModelo, View& auxVista)
++iniciarJuego() : bool
++movimientosVehiculos() : bool
++mostrarMapa(): void
++pushPasajerosBus(): void
++verificarZonaRecogida(): void 
++verificarVictoria() : bool
++verificarDerrota() : bool
+}
+
+
+class Model{
+-Vehiculos: vector<Vehiculo>
+-Pasajeros: vector<Pasajero>
+-tablero: Tablero
+
++Model()
++cargarTxt(int nivel): void
++cargarVehiculosEnTablero(): void
++cargarPasajerosEnTablero(): void
++verificarColision(int posX, int posY): bool 
++verificarDireccion(char direccion, int posX, int posY): bool 
++verificarInputDireccion(): char
++verificarPosicionVehiculo(): tuple<int,int> 
++verificarZonaRecogida(): void
++moverVehiculo(int posX, int posY, int tam,char direccion): bool
++pushPasajerosBus(int i): void
++getVerificarDerrota(): bool
++getTablero(): Tablero& 
+}
+
+abstract class View{
++View():
++{abstract} mostrarMenu(): void
++{abstract} mostrarNivel(int nivel): void
++{abstract} mostrarMapa(Tablero& paradero): void
++{abstract} pantallaDerrota() : void
++{abstract} pantallaVictoria(): void
++virtual ~View():
+
+}
+
+abstract class ViewSFML{
++ViewSFML()
++mostrarMenu(): void override
++mostrarNivel(int nivel): void override
++mostrarMapa(Tablero& paradero): void override
++pantallaDerrota() : void override
++pantallaVictoria(): void override
++~ViewSFML(): override
+}
+
+abstract class ViewConsola{
++ViewConsola()
++mostrarMenu(): void override
++mostrarNivel(int nivel): void override
++mostrarMapa(Tablero& paradero): void override
++pantallaDerrota() : void override
++pantallaVictoria(): void override
++~ViewConsola(): override
+}
+
+
+class Vehiculo{
+
+-tipo: char
+-color: char
+-orientacion: char
+-tamano: int
+-posX: int
+-posY: int
+-sillas: vector Pasajero*
++Vehiculo(char auxTipo,char auxColor,char auxOrientacion, int auxTamano, int auxPosX, int auxPosY)
++getColor(): char
++getTipo(): char
++getTamano(): int
++getOrientación(): char
++getPosX(): int
++getPosY(): int
++getSizeSillas(): int
++setPos(int x,int y): void
++pushPasajerosBus(Pasajero* peaton): void
+}
+
+
+class Pasajero{
+-color: char
++Pasajero(char auxColor)
++getColor(): char
+}
+
+class Tablero{
+
+-filas: int
+-columnas: int
+-zonaCoches: vector<vector<Vehiculo*>>
+-filaPasajeros: vector<Pasajero*>
+-zonaRecogida: vector<Vehiculo*>
+-zonaVictoria: vector<Vehiculo*>
+-verificarDerrota: bool
++Tablero()
++setZonaCoches(Vehiculo* auxVehiculo): void
++pushFilaPasajeros(Pasajero*): void
++verificarColision(int posX,int posY): bool
++verificarDireccion(char direccion, int posX, int posY): bool
++verificarDerrota(): bool
++moverVehiculo(int posX, int posY, int tam): bool
++pushPasajerosBus(Pasajero* peaton, int i): void
++verificarZonaRecogida():void
++pushZonaVictoria(Vehiculo* carro):void
+
+
++getFilaPasajeros(): vector<Pasajero*>&
++getZonarecogida(): vector<Vehiculo*>&
++getZonaCoches(): vector<Vector<Vehiculo*>>&
++getZonaVictoria(): vector<Vehiculo*>&
++getFilas(): int
++getColumnas(): int
++verificarPushPasajeros(): bool
+}
+
+
+
+Model *-- Vehiculo
+Model *-- Pasajero
+Model *-- Tablero
+
+Tablero o-- Vehiculo
+Tablero o-- Pasajero
+
+Controller --> Model
+Controller --> View
+
+View <|-- ViewConsola
+View <|-- ViewSFML
+View ..> Tablero
+@enduml	
