@@ -239,17 +239,9 @@ void Model::pushPasajerosBus(){
             int estCap = carro->getSizeSillas();
           if(peaton){
             char colorPeaton = peaton->getColor(); 
-            while((estCap < capacidad) && (colorCarro == colorPeaton) ){
+            if((estCap < capacidad) && (colorCarro == colorPeaton) ){
                 tablero.pushPasajerosBus(peaton, i);
                 estCap = carro->getSizeSillas();
-                break;
-                if(!(filaPasajeros.empty())){
-                  peaton = filaPasajeros[0];
-                  colorPeaton = peaton->getColor(); 
-                }
-                else if(filaPasajeros.empty()){
-                  colorPeaton = 'N';
-                }
             }
           }
         }
