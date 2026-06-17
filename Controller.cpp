@@ -47,12 +47,30 @@ bool Controller::iniciarJuego(){
   vista.mostrarMenu();
   //elegir el nivel 
   vista.mostrarBarraMapa();
-  std::cout<<"                                                                ¿Ingrese el número del nivel desea cursar?: \n                                                                1.Nivel uno \n                                                                2.Nivel dos \n                                                                3.Nivel tres. \n                                                                0. Ingrese cero para cerrar."<<std::endl<<std::endl;
+  std::cout<<R"(
+                                                                                        Ingrese el número del nivel que desea cursar
+                                                                                      ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+                                                                                                      1. Nivel uno
+                                                                                                      2. Nivel Dos
+                                                                                                      3. Nivel tres
+                                                                                                      0. Cierra el programa
+                                                                                      ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+)"<<std::endl<<std::endl;
   vista.mostrarBarraMapa();
+  std::cout<<"                                                                                                ";
   while(!(std::cin>>nivel) || nivel < 0 || nivel >3){
     vista.mostrarBarraMapa();
-    std::cout<<"                                                                ¿Ingrese un número válido del nivel desea cursar?: \n                                                                1.Nivel uno \n                                                                2.Nivel dos \n                                                                3.Nivel tres \n                                                                0. Ingrese cero para cerrar."<<std::endl<<std::endl;
+  std::cout<<R"(
+                                                                                        Ingrese el número del nivel que desea cursar
+                                                                                      ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+                                                                                                      1. Nivel uno
+                                                                                                      2. Nivel Dos
+                                                                                                      3. Nivel tres
+                                                                                                      0. Cierra el programa
+                                                                                      ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+)"<<std::endl<<std::endl;
     vista.mostrarBarraMapa();
+    std::cout<<"                                                                                                ";
     std::cin.clear();
     std::cin.ignore();
   }

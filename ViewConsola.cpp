@@ -91,7 +91,7 @@ std::cout<<"▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀�
 void ViewConsola::mostrarZonaPasajeros(Tablero& datosMapa){
   //puntuacion
   std::vector<Pasajero*>& filaPasajeros = datosMapa.getFilaPasajeros();
-  std::cout<<"Número de peatones por recoger: "<<filaPasajeros.size()<<std::endl;
+  std::cout<<"Número de cosmonautas por recoger: "<<filaPasajeros.size()<<std::endl;
 
     //Acá se usan punteros, para imprimir la fila de pasajeros.
   Pasajero* auxPasajero;
@@ -156,13 +156,13 @@ void ViewConsola::mostrarZonaAbordaje(Tablero& datosMapa){
           }
       }
       if (j == 0  ){
-        std::cout<<"     Nomenclatura: [Cupo, Color]";
+        std::cout<<"     Nomenclatura: [Cupo, Raza]";
       }
       else if(j == 1 ){
-        std::cout<<"     Colores: B = Blue; R = Red; Y = Yellow";
+        std::cout<<"     Razas: T = Terrestre; N = Nehreita; S = Saturnita";
       }
       else if(j == 2 ){
-        std::cout<<"     Ejemplo: [6B] es: Vehículo blue con 6 cupos libres";
+        std::cout<<"     Ejemplo: [6S] es= Nave Saturnita con 6 cupos libres";
       }
       std::cout<<std::endl;
   }
@@ -182,17 +182,18 @@ void ViewConsola::mostrarZonaCoches(Tablero& datosMapa){
  //Ahora imprimo el tablero de buses
   std::cout<<std::endl;
   std::cout<<"                                          ←COLUMNAS→"<<std::endl;
-  std::cout<<"                                  ZONE DE VEHÍCULOS PARA MOVER"<<std::endl;
+  std::cout<<"                                    ZONA DE NAVES PARA MOVER"<<std::endl;
   std::cout<<"                          ===1===2===3===4===5===6===7===8===9===10==="<<std::endl;  
   std::cout<<"                         ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌"<<std::endl;
+  std::cout<<"                              ◆   ◆   ◆   ◆   ◆   ◆   ◆   ◆   ◆   ◆"<<std::endl;
   Vehiculo* auxVehiculo;
   std::vector <int> vectorFilas = {1,2,3,4,5,6,7,8,9,10};
   for (int i = 0 ; i < filas; i++){
     if (i > 8) {
-      std::cout<<"                        "<<vectorFilas[i]<<"||";
+      std::cout<<"                         "<<vectorFilas[i]<<"◆";
     }
     else if(i <= 8) {
-      std::cout<<"                         "<<vectorFilas[i]<<"||";
+      std::cout<<"                          "<<vectorFilas[i]<<"◆";
     }
     for (int j = 0; j < columnas; j++){
       if(zonaCoches[i][j] == nullptr){
@@ -213,17 +214,18 @@ void ViewConsola::mostrarZonaCoches(Tablero& datosMapa){
         "                                                              ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌",
         "  ↑                                                                              1.Arriba                     ",
         "  F                                                                               ↑↑↑↑↑↑↑                     ",
-        "  I    Nomenclatura: [Dirección, Color]                                ←←←←←←←←←              →→→→→→→→        ",
-        "  L    Ejemplo: [vR] es: Vehículo rojo hacia abajo                   3.Izquierda             4.Derecha        ",
+        "  I    Nomenclatura: [Dirección, Raza]                                ←←←←←←←←←              →→→→→→→→        ",
+        "  L    Ejemplo: [vN] es: Nave Nehreita hacia abajo                   3.Izquierda             4.Derecha        ",
         "  A                                                                                                           ",
         "  S                                                                               ↓↓↓↓↓↓                      ",
         "  ↓                                                                              2.Abajo                      ",
         "                                                              ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌",
         "",
         ""};
-    std::cout<<"||"<<vectorFilas[i]<<vectorDir[i];
+    std::cout<<"◆"<<vectorFilas[i]<<vectorDir[i];
     std::cout<<std::endl;
   }
+  std::cout<<"                             ◆   ◆   ◆   ◆   ◆   ◆   ◆   ◆   ◆   ◆"<<std::endl;
   std::cout<<"                          ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌"<<std::endl; 
   std::cout<<"                          ===1===2===3===4===5===6===7===8===9===10==="<<std::endl<<std::endl;  
 }
