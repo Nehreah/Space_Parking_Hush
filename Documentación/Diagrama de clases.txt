@@ -50,6 +50,7 @@ abstract class View{
 
 abstract class ViewSFML{
 +ViewSFML()
++mostrarHistoria()
 +mostrarMenu(): void override
 +mostrarNivel(int nivel): void override
 +mostrarMapa(Tablero& paradero): void override
@@ -58,8 +59,9 @@ abstract class ViewSFML{
 +~ViewSFML(): override
 }
 
-abstract class ViewConsola{
+class ViewConsola{
 +ViewConsola()
++mostrarHistoria()
 +mostrarMenu(): void override
 +mostrarNivel(int nivel): void override
 +mostrarMapa(Tablero& paradero): void override
@@ -68,6 +70,9 @@ abstract class ViewConsola{
 +~ViewConsola(): override
 }
 
+class Historia{
++imprimirHistoria()
+}
 
 class Vehiculo{
 
@@ -133,12 +138,14 @@ Model *-- Vehiculo
 Model *-- Pasajero
 Model *-- Tablero
 
+
 Tablero o-- Vehiculo
 Tablero o-- Pasajero
 
 Controller --> Model
 Controller --> View
 
+View *-- Historia
 View <|-- ViewConsola
 View <|-- ViewSFML
 View ..> Tablero
