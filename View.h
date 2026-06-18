@@ -57,6 +57,7 @@ virtual void mostrarBarraMapa() = 0;
 virtual void mostrarZonaPasajeros(Tablero& datosMapa) = 0;
 virtual void mostrarZonaAbordaje(Tablero& datosMapa) = 0;
 virtual void mostrarZonaCoches(Tablero& datosMapa) = 0;
+virtual void mostrarHistoria() = 0;
 virtual void pantallaDerrota() = 0;
 virtual void pantallaVictoria() = 0;
 

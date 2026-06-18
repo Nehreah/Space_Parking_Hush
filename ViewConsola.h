@@ -57,6 +57,7 @@ void mostrarBarraMapa() override;
 void mostrarZonaPasajeros(Tablero& datosMapa) override;
 void mostrarZonaAbordaje(Tablero& datosMapa) override;
 void mostrarZonaCoches(Tablero& datosMapa) override;
+void mostrarHistoria() override;
 void pantallaDerrota() override;
 void pantallaVictoria() override;
 

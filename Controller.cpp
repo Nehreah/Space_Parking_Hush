@@ -42,18 +42,18 @@ Controller::Controller(Model& auxModelo, View& auxVista): vista(auxVista), model
 
 
 bool Controller::iniciarJuego(){
-  
+  vista.mostrarHistoria();
   //Muestra un titulo de menú.
   vista.mostrarMenu();
   //elegir el nivel 
   vista.mostrarBarraMapa();
   std::cout<<R"(
-                                                                                        Ingrese el número del nivel que desea cursar
+                                                                                       Ingrese el número de estación que desea evacuar
                                                                                       ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
-                                                                                                      1. Nivel uno
-                                                                                                      2. Nivel Dos
-                                                                                                      3. Nivel tres
-                                                                                                      0. Cierra el programa
+                                                                                                      1. Estación de arte
+                                                                                                      2. Casino
+                                                                                                      3. Unidad médica
+                                                                                                      0. Huir al centro galáctico
                                                                                       ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 )"<<std::endl<<std::endl;
   vista.mostrarBarraMapa();
@@ -61,12 +61,12 @@ bool Controller::iniciarJuego(){
   while(!(std::cin>>nivel) || nivel < 0 || nivel >3){
     vista.mostrarBarraMapa();
   std::cout<<R"(
-                                                                                        Ingrese el número del nivel que desea cursar
+                                                                                       Ingrese el número de estación que desea evacuar
                                                                                       ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
-                                                                                                      1. Nivel uno
-                                                                                                      2. Nivel Dos
-                                                                                                      3. Nivel tres
-                                                                                                      0. Cierra el programa
+                                                                                                      1. Estación de arte
+                                                                                                      2. Casino
+                                                                                                      3. Unidad médica
+                                                                                                      0. Huir al centro galáctico
                                                                                       ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
 )"<<std::endl<<std::endl;
     vista.mostrarBarraMapa();

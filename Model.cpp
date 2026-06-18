@@ -175,15 +175,15 @@ bool Model::verificarDireccion(char direccion,  int posX, int posY){
 std::tuple<int,int> Model::verificarPosicionVehiculo(){
   int posX;
   int posY;
-  std::cout<<"Ingrese las coordenadas (0,0) y regresará al menú de elección de nivel"<<std::endl<<std::endl;
-  std::cout<<"Qué vehículo desea mover, ingrese el número de filas [↓↑] de enter e ingrese el número de columnas [←→] y de enter."<<std::endl<<std::endl;
+  std::cout<<"Ingrese las coordenadas (0,0) y regresará al menú de elección de nivel"<<std::endl;
+  std::cout<<"Qué nave desea mover, ingrese el número de filas [↓↑] de enter e ingrese el número de columnas [←→] y de enter."<<std::endl;
   std::cin>>posX>>posY;
   int filas = tablero.getColumnas();
   int columnas = tablero.getFilas();  
 
   while (posX > filas || posY > columnas || posX < 0 || posY < 0 ){
     std::cout<<"Error. Posición por fuera del mapa, elija una posición válida"<<std::endl;
-    std::cout<<"Qué vehículo desea mover, ingrese las filas [↓↑] de enter e ingrese las columnas [←→] y de enter"<<std::endl;
+    std::cout<<"Qué nave desea mover, ingrese las filas [↓↑] de enter e ingrese las columnas [←→] y de enter"<<std::endl;
     std::cin>>posX>>posY;
   }
     if (posX == 0 && posY == 0){
@@ -197,7 +197,7 @@ std::tuple<int,int> Model::verificarPosicionVehiculo(){
   //Mientras el puntero vehículo sea falso hace un bucle para pedir la posición nuevamente y restarle uno a cada uno nuevamente.
     while( !(carro) ){
       std::cout<<"Error. No hay vehículos en la dirección dada, elija una posición válida"<<std::endl;
-      std::cout<<"Qué vehículo desea mover, ingrese las filas [↓↑] de enter e ingrese las columnas [←→] y de enter"<<std::endl;
+      std::cout<<"Qué nave desea mover, ingrese las filas [↓↑] de enter e ingrese las columnas [←→] y de enter"<<std::endl;
       std::cin>>posX>>posY;
       posX-=1;
       posY-=1;

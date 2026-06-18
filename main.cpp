@@ -25,6 +25,12 @@
 
 
 int main() {
+  int opcion;
+  #ifdef _WIN32
+      system("cls");
+  #else
+      system("clear");
+  #endif
 //se crean 2 objetos de vista, uno para tener un View de consola y otro (aun no implementado) tendrá una vista con SFML
   ViewConsola vistaConsola;
   //Este vistaConsola2, se usará en un futuro ViewSFML y se llamará vistaSFML
@@ -35,8 +41,6 @@ int main() {
   Model modelo;
 
   //Se realiza un while para elegir el tipo de vista.
-  int opcion;
-  system("clear");
   std::cout<<"Elija el modo de vista que desea para el juego: \n1. Consola \n2. Vista gráfica(aun no está lista) \n0. Para cerrar el programa"<<std::endl;
    while(!(std::cin>>opcion) || opcion > 2 || opcion <0 ){
     std::cout<<"Por favor ingrese una opción válida: "<<std::endl;
@@ -56,6 +60,7 @@ int main() {
   }
   //Ahora controller se instancia con el modelo y el puntero al tipo de vista elegido.
   Controller control(modelo, *vista);
+  
  
  //hacemos un while que mientras iniciar juego elija un nivel real, el juego iniciará, al elegir 0 se cierra el loop y el juego. Aquí ocurre la selección de niveles y el juego.
     while(control.iniciarJuego()){
