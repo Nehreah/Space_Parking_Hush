@@ -41,8 +41,11 @@ Controller::Controller(Model& auxModelo, View& auxVista): vista(auxVista), model
 
 
 
-bool Controller::iniciarJuego(){
-  vista.mostrarHistoria();
+bool Controller::iniciarJuego(int contador){
+
+  if (contador == 0){
+    vista.mostrarHistoria();
+  }
   //Muestra un titulo de menú.
   vista.mostrarMenu();
   //elegir el nivel 

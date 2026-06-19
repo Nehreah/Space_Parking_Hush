@@ -58,7 +58,7 @@ Model& model;
 public:
 
 Controller(Model& auxModelo, View& auxVista);
-bool iniciarJuego();
+bool iniciarJuego(int contador);
 bool movimientosVehiculos();
 void mostrarMapa();
 void pushPasajerosBus();

@@ -61,9 +61,9 @@ int main() {
   //Ahora controller se instancia con el modelo y el puntero al tipo de vista elegido.
   Controller control(modelo, *vista);
   
- 
+    int contador = 0;
  //hacemos un while que mientras iniciar juego elija un nivel real, el juego iniciará, al elegir 0 se cierra el loop y el juego. Aquí ocurre la selección de niveles y el juego.
-    while(control.iniciarJuego()){
+    while(control.iniciarJuego(contador)){
     //Permite 30 movimientoa, estoy pensando en reducirlo y si se acaban los movimientos, entonces game over. Aquí ocurre el juego.
       for(int i =0; i = 30; i++){
   //Es un bucle, mientras sea true todo seguirá, pero si es false (esto ocurre si selecciona coordenadas 0,0) retorna a este menú de selección y hace un break del for, volviendo al while
@@ -82,6 +82,7 @@ int main() {
           break;
         }
       }
+      contador ++;
     }
 
   return 0;
