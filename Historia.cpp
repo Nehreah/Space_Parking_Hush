@@ -59,7 +59,9 @@ void Historia::imprimirHistoria(){
                      | /        '--| |      ~~       |                                                                                  
        ~..   - ~  '  |/            | |    __----  .. |   .      .     _                                                                 
   )";
-    std::this_thread::sleep_for(std::chrono::milliseconds(4000));
+    std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+    std::cin.ignore();
+    std::cin.get();
   
 
   #ifdef _WIN32
@@ -120,7 +122,7 @@ void Historia::imprimirHistoria(){
   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@.@@@@@@                                          
   @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  
   )";
-  std::this_thread::sleep_for(std::chrono::milliseconds(6000));
+  std::this_thread::sleep_for(std::chrono::milliseconds(1000));
   
     #ifdef _WIN32
       system("cls");
